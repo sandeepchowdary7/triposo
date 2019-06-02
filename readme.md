@@ -96,12 +96,6 @@ Methods
 $city = Triposo::city($cityName);
 ```
 
-** Other venues methods **
-
-```php
-// get suggestion @see https://developer.triposo.com/docs
-$city = Triposo::suggest($searchQuery);
-
 
 ## License
 
