@@ -1,0 +1,30 @@
+{
+    "name": "sandeepchowdary7/laratriposo",
+    "description": "Simple and extensible Triposo API PHP Client with Laravel Support based on Guzzle 6",
+    "type": "library",
+    "keywords": [
+        "triposo",
+        "laravel",
+        "client",
+        "api",
+        "php"
+    ],
+    "homepage": "https://github.com/sandeepchowdary7/laratriposo",
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sandeep",
+            "email": "sxk80270@ucmo.edu"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Sandeepchowdary7\\Laratriposo\\": "src"
+        }
+    }
+}
