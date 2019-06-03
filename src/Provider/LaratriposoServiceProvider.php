@@ -9,7 +9,7 @@ class LaratriposoServiceProvider extends ServiceProvider {
     public function register()
     {
         $this->app->singleton('laratriposo', function($app) {
-            return new Triposo(config('services.laratriposo'));
+            return new Triposo(config('services.triposo'));
         });
     }
 }
