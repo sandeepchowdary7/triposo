@@ -101,7 +101,7 @@ $city = Triposo::city($cityName);
 
 The MIT License (MIT). Please see [License File](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/sandeepchowdary7/laratriposo.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/sandeepchowdary7/laratriposo.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sandeepchowdary7/laratriposo.svg?style=flat-square
 
