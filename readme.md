@@ -104,6 +104,9 @@ The MIT License (MIT). Please see [License File](license.md) for more informatio
 [ico-version]: https://img.shields.io/packagist/v/sandeepchowdary7/laratriposo.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sandeepchowdary7/laratriposo.svg?style=flat-square
+[ico-issues]:	https://img.shields.io/github/issues/sandeepchowdary7/triposo.svg?style=flat-square
+[ico-stars]:    https://img.shields.io/github/stars/sandeepchowdary7/triposo.svg?style=flat-square
+[ico-forks]:    https://img.shields.io/github/forks/sandeepchowdary7/triposo.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/sandeepchowdary7/laratriposo
 [link-downloads]: https://packagist.org/packages/sandeepchowdary7/laratriposo
