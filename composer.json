@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sandeepchowdary7\\Laratriposo\\LaratriposoServiceProvider"
+                "Sandeepchowdary7\\LaratriposoServiceProvider"
             ],
             "aliases": {
                 "Triposo": "Sandeepchowdary7\\Laratriposo\\Facade\\LaratriposoFacade"
