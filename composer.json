@@ -26,5 +26,15 @@
         "psr-4": {
             "Sandeepchowdary7\\Laratriposo\\": "src"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sandeepchowdary7\\Laratriposo\\LaratriposoServiceProvider"
+            ],
+            "aliases": {
+                "Triposo": "Sandeepchowdary7\\Laratriposo\\Facade\\LaratriposoFacade"
+            }
+        }
     }
 }
