@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandeepchowdary7\Laratriposo\Provider;
+namespace Sandeepchowdary7\Laratriposo;
 
 use Illuminate\Support\ServiceProvider;
 use Sandeepchowdary7\Laratriposo\Triposo;
