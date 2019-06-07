@@ -1,16 +1,13 @@
-# Laratriposo
+
+# Triposo API Laravel Wrapper #
+## A Laravel wrapper for Triposo's PHP wrapper for their REST API ##
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](license.md)
 [![Total Downloads][ico-downloads]][link-downloads]
 
-
 Simple and extensible Triposo API PHP Client with Laravel Facade and ServiceProvider based on Guzzle 6
 Currently it supports only userless endpoint requests.
-
-
-# Triposo API Laravel Wrapper #
-## A Laravel wrapper for Triposo's PHP wrapper for their REST API ##
 
 ### Installation ###
 
@@ -49,15 +46,13 @@ Sandeepchowdary7\Laratriposo\LaratriposoServiceProvider::class,
 
 ### The following functions are available: ###
 
-###USAGE
 
 - $city = new Triposo();
-  $city->getCity($cityName);
+- $city->getCity($cityName);
 
 For more information about the REST API go to this link:
 https://www.triposo.com
 
-```
 
 
 ## License
@@ -75,3 +70,4 @@ The MIT License (MIT). Please see [License File](license.md) for more informatio
 [link-downloads]: https://packagist.org/packages/sandeepchowdary7/laratriposo
 [link-author]: https://github.com/sandeepchowdary7
 [link-contributors]: ../../contributors
+```
