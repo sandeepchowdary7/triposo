@@ -7,7 +7,6 @@ use Sandeepchowdary7\Laratriposo\Interfaces\TriposoInterface;
 
 Class Triposo implements TriposoInterface
 {
-    private $version         = '2';
     private $api_token       = '';
     private $account_id      = '';
     private $error_code      = '';
@@ -211,7 +210,7 @@ Class Triposo implements TriposoInterface
     }
 
     /**
-    * Some keys are removed from the params so they don't get send with the other data to Drip.
+    * Some keys are removed from the params so they don't get send with the other data to Triposo.
     *
     * @param array $params
     * @param array

@@ -9,91 +9,54 @@ Simple and extensible Triposo API PHP Client with Laravel Facade and ServiceProv
 Currently it supports only userless endpoint requests.
 
 
-## Install
+# Triposo API Laravel Wrapper #
+## A Laravel wrapper for Triposo's PHP wrapper for their REST API ##
 
-Via Composer
+### Installation ###
 
-``` bash
-$ composer require sandeepchowdary7/laratriposo
+1) Add the package as a dependency in your composer.json
+
+```
+composer require sandeepchowdary7/laratriposo
+```
+
+2) publish the vendor config file
+```
+php artisan vendor:publish --provider="Sandeepchowdary7\Laratriposo\LaratriposoServiceProvider"
+```
+
+3) Add your Triposo API token to the config file located in app/config/triposo.php. I recommend you add this key to your project .env file instead of directly adding it to your config file. You can find your API token at the user settings page (https://www.triposo.com).
+```
+TRIPOSO_API_TOKEN=your token here
+```
+
+4) Add your Triposo Account ID  to the config file located in app/config/triposo.php. I recommend you add this key to your project .env file instead of directly adding it to your config file.
+```
+TRIPOSO_ACCOUNT_ID=Your Account ID here
+```
+
+### Laravel <= 5.4
+1) Add the following line to your providers array in your `config/app.php` file
+```
+Sandeepchowdary7\Laratriposo\LaratriposoServiceProvider::class,
+```
+
+2) Add the following line to your aliases array in your `config/app.php` file
+```
+'Triposo' => Sandeepchowdary7\Laratriposo\Facade\LaratriposoFacade::class,
 ```
 
 
-## Usage with Laravel
+### The following functions are available: ###
 
-To use the Laravel Facade you need to add the ServiceProvider and Facade classes in your `config\app.php`
+###USAGE
 
-``` php
+- $city = new Triposo();
+  $city->getCity($cityName);
 
-'providers' => [
-    ...
-    Sandeepchowdary7\Laratriposo\Provider\LaratriposoServiceProvider::class,
-];
+For more information about the REST API go to this link:
+https://www.triposo.com
 
-'aliases' => [
-    ...
-    'Laratriposo' => Sandeepchowdary7\Laratriposo\Facade\Triposo::class
-];
-```
-
-You need to add your Triposo client ID and secret in `config\services.php`
-
-``` php
-'triposo' => [
-    'account' => YOUR_TRIPOSO_ACCOUNT_ID,
-    'token' => YOUR_TRIPOSO_TOKEN
-]
-```
-
-## Standard Usage
-
-``` php
-$config = [
-    account = YOUR_TRIPOSO_ACCOUNT_ID,
-    token = YOUR_TRIPOSO_TOKEN,
-    apiUrl = TRIPOSO_API_URL, //optional
-];
-
-$triposo = new Triposo($config);
-
-$city = $triposo->city($searchQuery);
-```
-
-## Query filters
-
-If you need to generate, filter or transform your search query you can extract all the logic in a separate class that implements the `Sandeepchowdary7\Laratriposo\Filter\FilterContract`
-and then just inject it with `setFilter()` method.
-
-```php
-$city = Triposo::setFilter(new MyFilter())->city();
-```
-
-Put your filter logic in the parse() method. It will automatically receive the query passed in the search methods.
-You can overwrite values, generate values from your custom array or whatever you need. The returned array will be sent with the Triposo request.
-```php
-
-/**
-* Generate, transform or filter your search query
-*
-* @param $query
-* @return array
-*/
-public function parse($query = [])
-{
-    return [
-        'll' => $query['city'],
-    ];
-}
-```
-
-Methods
-
-
-** Searching city **
-
-** Get a single city **
-
-```php
-$city = Triposo::city($cityName);
 ```
 
 
