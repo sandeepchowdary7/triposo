@@ -3,16 +3,7 @@ namespace Sandeepchowdary7\Laratriposo\Interfaces;
 interface TriposoInterface
 {
     public function getCity($params);
-    public function getCampaigns($params);
-	public function fetchCampaign($params);
 	public function getAccounts();
-	public function createOrUpdateSubscriber($params);
-	public function fetchSubscriber($params);
-	public function subscribeSubscriber($params);
-	public function unsubscribeSubscriber($params);
-	public function tagSubscriber($params);
-	public function untagSubscriber($params);
-	public function recordEvent($params);
     public function makeRequest($url, $params = array(), $req_method = self::GET);
 	public function getRequestInfo();
 	public function getErrorMessage();

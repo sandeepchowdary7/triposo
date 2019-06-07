@@ -12,7 +12,7 @@ Class Triposo implements TriposoInterface
     private $account_id      = '';
     private $error_code      = '';
     private $error_message   = '';
-    private $user_agent      = 'Drip API Laravel Wrapper (getdrip.com)';
+    private $user_agent      = 'Triposo API Laravel Wrapper (getdrip.com)';
     private $api_end_point   = 'https://www.triposo.com/api/20181213/';
     private $recent_req_info = array();
     private $timeout         = 30;
@@ -56,7 +56,7 @@ Class Triposo implements TriposoInterface
     * @param array
     * @return array
     */
-    public  function getCity($cityName) {
+    public function getCity($cityName) {
 
         if (!$cityName) 
             throw new Exception("Invalid input.");
@@ -135,24 +135,24 @@ Class Triposo implements TriposoInterface
         curl_setopt($ch, CURLOPT_USERPWD, $this->api_token . ":" . ''); // no pwd
         curl_setopt($ch, CURLOPT_USERAGENT, empty($params['user_agent']) ? $this->user_agent : $params['user_agent']);
 
-        if ($req_method == self::POST) { // We want post but no params to supply. Probably we have a nice link structure which includes all the info.
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        } elseif ($req_method == self::DELETE) {
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
-        } elseif ($req_method == self::PUT) {
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-        }
+        // if ($req_method == self::POST) { // We want post but no params to supply. Probably we have a nice link structure which includes all the info.
+        //     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        // } elseif ($req_method == self::DELETE) {
+        //     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        // } elseif ($req_method == self::PUT) {
+        //     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+        // }
 
-        if (!empty($params)) {
-            if ((isset($params['__req']) && strtolower($params['__req']) == 'get')
-            || $req_method == self::GET) {
-                unset($params['__req']);
-                $url .= '?' . http_build_query($params);
-            } elseif ($req_method == self::POST || $req_method == self::DELETE) {
-                $params_str = is_array($params) ? json_encode($params) : $params;
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $params_str);
-            }
-        }
+        // if (!empty($params)) {
+        //     if ((isset($params['__req']) && strtolower($params['__req']) == 'get')
+        //     || $req_method == self::GET) {
+        //         unset($params['__req']);
+        //         $url .= '?' . http_build_query($params);
+        //     } elseif ($req_method == self::POST || $req_method == self::DELETE) {
+        //         $params_str = is_array($params) ? json_encode($params) : $params;
+        //         curl_setopt($ch, CURLOPT_POSTFIELDS, $params_str);
+        //     }
+        // }
 
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
