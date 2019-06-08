@@ -2,7 +2,7 @@
 namespace Sandeepchowdary7\Laratriposo\Interfaces;
 interface TriposoInterface
 {
-    public function getCity($params);
+    public function getCity($cityName);
 	public function getAccounts();
     public function makeRequest($url, $params = array(), $req_method = self::GET);
 	public function getRequestInfo();

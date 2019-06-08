@@ -69,13 +69,13 @@ Class Triposo implements TriposoInterface
 
         // here we distinguish errors from no city.
         // when there's no json that's an error
-        $city = empty($raw_json)
+        $data = empty($raw_json)
         ? false
         : empty($raw_json['results']['0'])
         ? array()
         : $raw_json['results']['0'];
 
-        return $city;
+        return $data;
     }
 
     /**
