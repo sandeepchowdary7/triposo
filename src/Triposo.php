@@ -11,7 +11,7 @@ Class Triposo implements TriposoInterface
     private $account_id      = '';
     private $error_code      = '';
     private $error_message   = '';
-    private $user_agent      = 'Triposo API Laravel Wrapper (getdrip.com)';
+    private $user_agent      = 'Triposo API Laravel Wrapper (triposo.com)';
     private $api_end_point   = 'https://www.triposo.com/api/20181213/';
     private $recent_req_info = array();
     private $timeout         = 30;
@@ -67,15 +67,15 @@ Class Triposo implements TriposoInterface
             $raw_json = json_decode($res['buffer'], true);
         }
 
-        // here we distinguish errors from no campaigns.
+        // here we distinguish errors from no city.
         // when there's no json that's an error
-        $campaigns = empty($raw_json)
+        $city = empty($raw_json)
         ? false
-        : empty($raw_json['campaigns'])
+        : empty($raw_json['results']['0'])
         ? array()
-        : $raw_json['campaigns'];
+        : $raw_json['results']['0'];
 
-        return $campaigns;
+        return $city;
     }
 
     /**
