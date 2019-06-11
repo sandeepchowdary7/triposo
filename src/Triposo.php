@@ -89,8 +89,7 @@ Class Triposo implements TriposoInterface
         if (!$cityName) 
             throw new Exception("Invalid input.");
 
-        $url = $this->api_end_point . "poi.json?location_id=$cityName&tag_labels=eatingout&count=10&
-        fields=id,name,score,intro,tag_labels,best_for&order_by=-score&account=$this->account_id&token=$this->api_token";
+        $url = $this->api_end_point . "poi.json?location_id=$cityName&tag_labels=eatingout&count=10&fields=id,name,score,intro,tag_labels,best_for&order_by=-score&account=$this->account_id&token=$this->api_token";
 
         $res = $this->makeRequest($url, $cityName);
 
