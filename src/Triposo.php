@@ -84,9 +84,15 @@ Class Triposo implements TriposoInterface
     * @param void
     * @return bool/array
     */
-    public  function getAccounts() {
-        $url = $this->api_end_point . 'accounts';
-        $res = $this->makeRequest($url);
+    public  function getCityFood($cityName) {
+
+        if (!$cityName) 
+            throw new Exception("Invalid input.");
+
+        $url = $this->api_end_point . "poi.json?location_id=$cityName&tag_labels=eatingout&count=10&
+        fields=id,name,score,intro,tag_labels,best_for&order_by=-score&account=$this->account_id&token=$this->api_token";
+
+        $res = $this->makeRequest($url, $cityName);
 
         if (!empty($res['buffer'])) {
             $raw_json = json_decode($res['buffer'], true);
@@ -94,9 +100,9 @@ Class Triposo implements TriposoInterface
 
         $data = empty($raw_json)
         ? false
-        : empty($raw_json['accounts'])
+        : empty($raw_json['results'])
         ? array()
-        : $raw_json['accounts'];
+        : $raw_json['results'];
 
         return $data;
     }

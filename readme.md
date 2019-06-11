@@ -46,9 +46,24 @@ Sandeepchowdary7\Laratriposo\LaratriposoServiceProvider::class,
 
 ### The following functions are available: ###
 
+### Init Triposo rqst
+```
+ $city = new Triposo();
+```
 
-- $city = new Triposo();
-- $city->getCity($cityName);
+### For city info
+
+```
+ $city = new Triposo();
+ $city->getCity($cityName);
+```
+
+### For city Food info
+
+```
+ $cityFood = new Triposo();
+ $cityFood->getCityFood($cityName);
+```
 
 For more information about the REST API go to this link:
 https://www.triposo.com
